@@ -20,12 +20,13 @@ POST /api/platforms/upload — загрузка файла с площадкам
 
 GET /api/platforms?location=/path — поиск площадок для указанной локации.
 
-Пример
+   Пример
 
  
     curl -X POST -F "file=@sample-data/valid.txt" http://localhost:7107/api/platforms/upload
     curl "http://localhost:7107/api/platforms?location=/ru/svrd/revda"
-    Тесты
+    
+   Тесты
 
 Проект содержит юнит-тесты (xUnit), покрывающие:
 
