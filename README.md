@@ -13,7 +13,7 @@
 Запустить сервис:
 
 bash
-Копировать код
+
 dotnet run
 Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:7107/swagger).
 
@@ -24,6 +24,6 @@ GET /api/platforms?location=/path — поиск площадок для ука�
 
 Пример
 bash
-Копировать код
+
 curl -X POST -F "file=@sample-data/valid.txt" http://localhost:5000/api/platforms/upload
 curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
