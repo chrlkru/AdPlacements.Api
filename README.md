@@ -12,9 +12,9 @@
    cd <repo>/AdPlacements.Api
 Запустить сервис:
 
-   ```bash
+     ```bash
+      dotnet run
 
-   dotnet run
 Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:7107/swagger).
 
 API
