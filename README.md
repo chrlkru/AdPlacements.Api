@@ -22,8 +22,7 @@ GET /api/platforms?location=/path — поиск площадок для ука�
 
 Пример
 
-    ```bash
-    Копировать код
+ 
     curl -X POST -F "file=@sample-data/valid.txt" http://localhost:7107/api/platforms/upload
     curl "http://localhost:7107/api/platforms?location=/ru/svrd/revda"
     Тесты
@@ -37,5 +36,5 @@ GET /api/platforms?location=/path — поиск площадок для ука�
 контроллер: успешные и ошибочные сценарии.
 
 Запуск тестов
-    ```bash
+
     dotnet test
