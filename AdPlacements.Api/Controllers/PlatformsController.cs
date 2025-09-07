@@ -13,18 +13,23 @@ public class PlatformsController : ControllerBase
     public PlatformsController(IAdPlatformStore store) => _store = store;
 
     [HttpPost("upload")]
-    public async Task<ActionResult<UploadResultDto>> Upload([FromForm] IFormFile file, CancellationToken ct)
+    [Consumes("multipart/form-data")]
+    [ProducesResponseType(typeof(UploadResultDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<UploadResultDto>> Upload([FromForm] UploadFileRequest req, CancellationToken ct)
     {
-        if (file is null || file.Length == 0)
+        var file = req.File;
+        if (file == null || file.Length == 0)
             return BadRequest("Файл не передан или пуст");
 
-        await using var ms = new MemoryStream();
+        using var ms = new MemoryStream();
         await file.CopyToAsync(ms, ct);
         ms.Position = 0;
 
         var (loaded, skipped) = _store.Reload(ms);
         return Ok(new UploadResultDto(loaded, skipped));
     }
+
 
 
     [HttpGet]
