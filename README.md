@@ -1,29 +1,29 @@
 # AdPlacements.Api
 
-## Запуск сервиса
+## Р—Р°РїСѓСЃРє СЃРµСЂРІРёСЃР°
 
-### Требования
+### РўСЂРµР±РѕРІР°РЅРёСЏ
 - .NET 8 SDK
 
-### Инструкция
-1. Клонировать репозиторий:
+### РРЅСЃС‚СЂСѓРєС†РёСЏ
+1. РљР»РѕРЅРёСЂРѕРІР°С‚СЊ СЂРµРїРѕР·РёС‚РѕСЂРёР№:
    ```bash
-   git clone https://github.com/<username>/<repo>.git
+   git clone https://github.com/chrlkru/AdPlacements.Api.git
    cd <repo>/AdPlacements.Api
-Запустить сервис:
+Р—Р°РїСѓСЃС‚РёС‚СЊ СЃРµСЂРІРёСЃ:
 
 bash
-Копировать код
+РљРѕРїРёСЂРѕРІР°С‚СЊ РєРѕРґ
 dotnet run
-Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:5000/swagger).
+РћС‚РєСЂС‹С‚СЊ Swagger UI РїРѕ Р°РґСЂРµСЃСѓ, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ РІС‹РІРµРґРµРЅ РІ РєРѕРЅСЃРѕР»Рё (РѕР±С‹С‡РЅРѕ http://localhost:5000/swagger).
 
 API
-POST /api/platforms/upload — загрузка файла с площадками (multipart/form-data, поле File).
+POST /api/platforms/upload вЂ” Р·Р°РіСЂСѓР·РєР° С„Р°Р№Р»Р° СЃ РїР»РѕС‰Р°РґРєР°РјРё (multipart/form-data, РїРѕР»Рµ File).
 
-GET /api/platforms?location=/path — поиск площадок для указанной локации.
+GET /api/platforms?location=/path вЂ” РїРѕРёСЃРє РїР»РѕС‰Р°РґРѕРє РґР»СЏ СѓРєР°Р·Р°РЅРЅРѕР№ Р»РѕРєР°С†РёРё.
 
-Пример
+РџСЂРёРјРµСЂ
 bash
-Копировать код
+РљРѕРїРёСЂРѕРІР°С‚СЊ РєРѕРґ
 curl -X POST -F "file=@sample-data/valid.txt" http://localhost:5000/api/platforms/upload
 curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
