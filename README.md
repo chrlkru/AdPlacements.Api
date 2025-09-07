@@ -11,11 +11,7 @@
    git clone https://github.com/chrlkru/AdPlacements.Api.git
    cd <repo>/AdPlacements.Api
 Запустить сервис:
-
-     
       dotnet run
-
-Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:7107/swagger).
 
 Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:7107/swagger).
 
@@ -25,7 +21,21 @@ POST /api/platforms/upload — загрузка файла с площадкам
 GET /api/platforms?location=/path — поиск площадок для указанной локации.
 
 Пример
-bash
-Копировать код
-curl -X POST -F "file=@sample-data/valid.txt" http://localhost:5000/api/platforms/upload
-curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
+
+    ```bash
+    Копировать код
+    curl -X POST -F "file=@sample-data/valid.txt" http://localhost:7107/api/platforms/upload
+    curl "http://localhost:7107/api/platforms?location=/ru/svrd/revda"
+    Тесты
+
+Проект содержит юнит-тесты (xUnit), покрывающие:
+
+парсер: корректный парсинг и скип невалидных строк;
+
+индекс/хранилище: вложенный поиск и полная перезагрузка;
+
+контроллер: успешные и ошибочные сценарии.
+
+Запуск тестов
+    ```bash
+    dotnet test
