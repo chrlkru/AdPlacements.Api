@@ -8,14 +8,14 @@
 ### Инструкция
 1. Клонировать репозиторий:
    ```bash
-   git clone https://github.com/<username>/<repo>.git
+   git clone https://github.com/chrlkru/AdPlacements.Api.git
    cd <repo>/AdPlacements.Api
 Запустить сервис:
 
-bash
-Копировать код
-dotnet run
-Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:5000/swagger).
+     
+      dotnet run
+
+Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:7107/swagger).
 
 API
 POST /api/platforms/upload — загрузка файла с площадками (multipart/form-data, поле File).
@@ -23,7 +23,21 @@ POST /api/platforms/upload — загрузка файла с площадками (multipart/form-data, п
 GET /api/platforms?location=/path — поиск площадок для указанной локации.
 
 Пример
-bash
-Копировать код
-curl -X POST -F "file=@sample-data/valid.txt" http://localhost:5000/api/platforms/upload
-curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
+   ```bash
+
+   curl -X POST -F "file=@sample-data/valid.txt" http://localhost:5000/api/platforms/upload
+   curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
+Тесты
+
+Проект содержит юнит-тесты (xUnit), покрывающие:
+
+парсер: корректный парсинг и скип невалидных строк;
+
+индекс/хранилище: вложенный поиск и полная перезагрузка;
+
+контроллер: успешные и ошибочные сценарии.
+
+Запуск тестов
+    ```bash
+
+    dotnet test
