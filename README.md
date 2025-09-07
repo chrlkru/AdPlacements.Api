@@ -11,6 +11,7 @@
    git clone https://github.com/chrlkru/AdPlacements.Api.git
    cd <repo>/AdPlacements.Api
 Запустить сервис:
+
       dotnet run
 
 Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:7107/swagger).
