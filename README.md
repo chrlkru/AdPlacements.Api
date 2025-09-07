@@ -15,7 +15,7 @@
 bash
 Копировать код
 dotnet run
-Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:5000/swagger).
+Открыть Swagger UI по адресу, который будет выведен в консоли (обычно http://localhost:7107/swagger).
 
 API
 POST /api/platforms/upload — загрузка файла с площадками (multipart/form-data, поле File).
